@@ -22,12 +22,20 @@ if (login_check($mysqli) == true) {
 	<body>
 		<?php
 		if (isset($_GET['error'])) {
-			echo '<p class="error">Error Logging In!</p>';
+			if ($_GET['error'] == 1)
+				echo '<p class="error">Error Logging In!</p>';
+
+			else if ($_GET['error'] == 2)
+				echo '<p class="error">You are not allowed to access. Please login here.</p>';
 		}
 		?>
-		<form action="includes/process_login.php" method="post" name="login_form">
+
+			<!--  send the data ("action") (once button is clicked) from form to process_login.php using method post-->		
+			<form action="includes/process_login.php" method="post" name="login_form">
 			Email: <input type="text" name="email" />
 			Password: <input type="password" name="password" id="password"/>
+
+			<!-- On button click, use formhash function from forms.js page on passwoord and form-->
 			<input type="button" value="Login" onclick="formhash(this.form, this.form.password);" />
 		</form>
 
