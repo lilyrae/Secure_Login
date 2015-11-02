@@ -4,5 +4,3 @@ Adapted from tutorial: http://www.wikihow.com/Create-a-Secure-Login-Script-in-PH
 Website connecting to MySQL for registering and logging in users in PHP and JS.
 
 Custom implementation of the register page.
-
-Styling added in CSS using a bootstrap framework.
